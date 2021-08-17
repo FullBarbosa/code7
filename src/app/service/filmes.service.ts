@@ -22,4 +22,8 @@ export class FilmesService {
   create(filmes: Filmes): Observable<Filmes> {
     return this.http.post<Filmes>(this.baseUrl, filmes);
   }
+
+  delete(id: number): Observable<Filmes> {
+    return this.http.delete<Filmes>(`${this.baseUrl}/${id}`);
+  }
 }

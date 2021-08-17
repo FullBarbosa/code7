@@ -3,6 +3,7 @@ import { FilmesService } from '../../service/filmes.service';
 import { Filmes } from '../../interface/filmes';
 import { Router } from '@angular/router';
 import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-catalog',
   templateUrl: './catalog.component.html',
@@ -13,7 +14,8 @@ export class CatalogComponent implements OnInit {
   constructor(
     private service: FilmesService,
     private router: Router,
-    private modalService: NgbModal
+    private modalService: NgbModal,
+    private toastr: ToastrService
   ) {}
 
   ngOnInit(): void {
@@ -29,7 +31,12 @@ export class CatalogComponent implements OnInit {
   }
 
   roteId(id: any) {
-    this.router.navigate([`catalog/${id}`]);
+    this.service.delete(id).subscribe(() => {
+      const msg = 'FILME EXCLUIDO';
+      this.toastr.warning(msg, 'ERROR');
+    });
+
+    this.router.navigate(['/home']);
     this.fecharModal();
   }
 
