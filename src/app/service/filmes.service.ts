@@ -9,7 +9,7 @@ import { Filmes } from '../interface/filmes';
 export class FilmesService {
   constructor(private http: HttpClient) {}
 
-  baseUrl = 'http://localhost:3000/filmes';
+  baseUrl = 'https://latesteapi.herokuapp.com/filmes';
 
   listar(): Observable<Filmes[]> {
     return this.http.get<Filmes[]>(this.baseUrl);
