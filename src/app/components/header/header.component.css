@@ -1,0 +1,22 @@
+* {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+.row {
+  align-items: center;
+}
+
+a:hover {
+  color: #f4f843;
+  fill: #f4f843;
+}
+a.active {
+  color: #f4f843;
+  fill: #f4f843;
+}
+
+.img-fluid {
+  width: 6rem;
+}

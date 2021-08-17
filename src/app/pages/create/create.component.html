@@ -1,0 +1,44 @@
+
+<div class="card">
+  <div class="card-header">
+    CADASTRO DE FILME
+  </div>
+
+  <form class="card-body" [formGroup]="formulario">
+
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="floatingInput" placeholder="URL-IMG" formControlName="poster">
+      <label for="floatingInput">URL-IMG</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input type="email" class="form-control" id="floatingInput" placeholder="TITULO DO FILME" formControlName="nome">
+      <label for="floatingInput" >TITULO DO FILME</label>
+    </div>
+    <div class="row ">
+      <div class="form-floating mb-3 col">
+        <input type="email" class="form-control" id="floatingInput" placeholder="GÊNERO" formControlName="genero">
+        <label for="floatingInput">GÊNERO</label>
+      </div>
+
+      <div class="form-floating mb-3 col">
+        <input type="date" class="form-control" id="floatingInput" placeholder="00/00/000" formControlName="ano">
+        <label for="floatingInput">ANO</label>
+      </div>
+    </div>
+    <div class="form-floating">
+      <input type="password" class="form-control" id="floatingPassword" placeholder="DIRETOR" formControlName="diretor">
+      <label for="floatingPassword">DIRETOR</label>
+    </div>
+
+    <div class="form-floating" style="margin-top:1rem;">
+      <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" formControlName="descricao"></textarea>
+      <label for="floatingTextarea">DESCRIÇÃO</label>
+    </div>
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end " style="margin-top:1rem;">
+      <button class="btn btn-secondary me-md-2" type="button">CANCELAR</button>
+      <button class="btn btn-danger" type="button" (click)="submit()">CADASTRAR</button>
+    </div>
+  </form>
+
+</div>

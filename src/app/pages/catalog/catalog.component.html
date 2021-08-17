@@ -1,0 +1,47 @@
+<div class="row row-cols-1 row-cols-md-3 g-4">
+
+  <div *ngFor="let filme of filmes">
+
+    <div class="card">
+        <img src="{{filme.poster}}" class="card-img-top rounded mx-auto d-block hove-filme" alt="..." (click)="open(content)" >
+
+      <div class="card-body">
+        <h5 class="card-title">{{filme.nome}}</h5>
+      </div>
+    </div>
+
+    <!-- MODAL -->
+
+    <ng-template #content let-c="close" let-d="dismiss">
+      <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">{{filme.nome}}</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="d('Cross click')"></button>
+      </div>
+
+      <div class="modal-body">
+        <div class="row">
+          <div class="col">
+            <img src="{{filme.poster}}" class="img-thumbnail" alt="..."
+               />
+          </div>
+          <div class="col">
+
+            <p><b>DIRETOR:</b> {{filme.diretor}}</p>
+
+            <p><b>GENERO:</b> {{filme.genero}}</p>
+
+            <p><b>DESCRIÇÃO:</b> {{filme.descricao}}</p>
+
+            <p><b>LANÇAMENTO:</b> {{filme.ano}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" (click)="roteId(filme.id)">
+         DELETAR
+        </button>
+      </div>
+    </ng-template>
+
+  </div>
+</div>

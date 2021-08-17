@@ -1,0 +1,8 @@
+.hove-filme {
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.hove-filme:hover {
+  opacity: 0.8;
+}
